@@ -12,9 +12,9 @@ pipeline {
         stage('Build backend') {
             steps {
                 dir('backend') {
-                    sh 'pip install -r requirements.txt'
-                    sh 'python app.py & sleep 5'
-                    sh 'curl http://localhost:5000/health'
+                    bat 'pip install -r requirements.txt'
+                    bat 'start /B python app.py & timeout T/5'
+                    bat 'curl http://localhost:5000/health'
                 }
             }
         }
