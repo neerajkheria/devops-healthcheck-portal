@@ -32,11 +32,5 @@ pipeline {
                 }
             }
         }
-
-        stage('Archive Artifacts') {
-            steps {
-                archiveArtifacts artifacts: '**/*.py', fingerprint: true
-            }
-        }
-    }
+   }
 }
